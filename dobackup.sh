@@ -24,6 +24,8 @@ else
   AWS_ARGS="--endpoint-url ${S3_ENDPOINT}"
 fi
 
+echo "cleanup"
+rm /tmp/*.tar.gz
 echo "creating archive"
 tar -zcvf "${FILE_NAME}" "${TARGET}"
 echo "uploading archive to S3 [${FILE_NAME}, storage class - ${S3_STORAGE_CLASS}]"
